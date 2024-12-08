@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     const vector<string> keys = {
-        "Apple", "Banana", "Coconut ", "Durian"
+        "Apple", "Banana", "Coconut", "Durian"
     };
     const vector<int> vals = {
         300, 110, 700, 1000
@@ -16,7 +16,12 @@ int main() {
     if (keys_size != vals_size) return 1;
 
     for (int i = 0; i < keys_size; ++i) {
-        cout << keys[i] << ": " << vals[i] << endl;
+        cout << keys[i] << ": ";
+        const int num = vals[i] / 10;
+        for (int j = 0; j < num; ++j) {
+            cout << "#";
+        }
+        cout << " (" << vals[i] << ")" << endl;
     }
 
     return 0;
