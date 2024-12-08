@@ -15,9 +15,10 @@ int main() {
     const int vals_size = vals.size();
     if (keys_size != vals_size) return 1;
 
+    const int divisor = 10;
     for (int i = 0; i < keys_size; ++i) {
         cout << keys[i] << ":" << endl;
-        const int num = vals[i] / 10;
+        const int num = vals[i] / divisor;
         for (int j = 0; j < num; ++j) {
             cout << "#";
         }
