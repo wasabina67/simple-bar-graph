@@ -25,7 +25,8 @@ int main(int argc, char* argv[]) {
         for (int j = 0; j < num; ++j) {
             cout << "#";
         }
-        cout << " (" << vals[i] << ")" << endl;
+        // cout << " (" << vals[i] << ")" << endl;
+        cout << " " << vals[i] << endl;
     }
 
     return 0;
