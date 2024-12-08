@@ -16,7 +16,7 @@ int main() {
     if (keys_size != vals_size) return 1;
 
     for (int i = 0; i < keys_size; ++i) {
-        cout << keys[i] << ": ";
+        cout << keys[i] << ":" << endl;
         const int num = vals[i] / 10;
         for (int j = 0; j < num; ++j) {
             cout << "#";
