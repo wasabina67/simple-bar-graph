@@ -10,7 +10,7 @@ $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 run: $(TARGET)
-	./$(TARGET)
+	./$(TARGET) 100
 
 clean:
 	rm -rf $(TARGET)
