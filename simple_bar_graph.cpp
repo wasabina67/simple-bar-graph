@@ -1,10 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc < 2) return 1;
+    const int divisor = atoi(argv[1]);
+
     const vector<string> keys = {
         "Apple", "Banana", "Coconut", "Durian"
     };
@@ -15,7 +19,6 @@ int main() {
     const int vals_size = vals.size();
     if (keys_size != vals_size) return 1;
 
-    const int divisor = 10;
     for (int i = 0; i < keys_size; ++i) {
         cout << keys[i] << ":" << endl;
         const int num = vals[i] / divisor;
