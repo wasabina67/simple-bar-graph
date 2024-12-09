@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <algorithm>
 
 using namespace std;
 
@@ -45,8 +46,16 @@ int main(int argc, char* argv[]) {
     const int vals_size = vals.size();
     if (keys_size != vals_size) return 1;
 
+    size_t max_key_length = 0;
+    for (const auto& key : keys) {
+        max_key_length = max(max_key_length, key.size());
+    }
+
     for (int i = 0; i < keys_size; ++i) {
-        cout << keys[i] << ":" << endl;
+        cout << keys[i];
+        cout << string(max_key_length - keys[i].size(), ' ');
+        cout << ": ";
+
         const int num = vals[i] / divisor;
         for (int j = 0; j < num; ++j) {
             cout << "#";
