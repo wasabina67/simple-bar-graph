@@ -32,3 +32,9 @@ Papaya    : ####### 700
 Pineapple : ########## 1000
 Strawberry: ##### 500
 ```
+
+## Clean
+
+```bash
+make clean
+```
