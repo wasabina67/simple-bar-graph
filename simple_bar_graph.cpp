@@ -35,13 +35,11 @@ int main(int argc, char* argv[]) {
         getline(ss, key, ',');
         getline(ss, val_str, ',');
         int val = stoi(val_str);
-
-        cout << " " << key << ", " << val << endl;
+        keys.push_back(key);
+        vals.push_back(val);
     }
 
     file.close();
-
-    return 0;
 
     const int keys_size = keys.size();
     const int vals_size = vals.size();
