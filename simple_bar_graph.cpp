@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <cstdlib>
@@ -9,12 +11,38 @@ int main(int argc, char* argv[]) {
     if (argc < 2) return 1;
     const int divisor = atoi(argv[1]);
 
-    const vector<string> keys = {
-        "Apple", "Banana", "Coconut", "Durian"
-    };
-    const vector<int> vals = {
-        300, 110, 700, 1000
-    };
+    // const vector<string> keys = {
+    //     "Apple", "Banana", "Coconut", "Durian"
+    // };
+    // const vector<int> vals = {
+    //     300, 110, 700, 1000
+    // };
+    vector<string> keys;
+    vector<int> vals;
+
+    ifstream file("data.csv");
+    if (!file.is_open()) return 1;
+
+    string line;
+    // Skip the header line
+    getline(file, line);
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string key;
+        string val_str;
+
+        getline(ss, key, ',');
+        getline(ss, val_str, ',');
+        int val = stoi(val_str);
+
+        cout << " " << key << ", " << val << endl;
+    }
+
+    file.close();
+
+    return 0;
+
     const int keys_size = keys.size();
     const int vals_size = vals.size();
     if (keys_size != vals_size) return 1;
